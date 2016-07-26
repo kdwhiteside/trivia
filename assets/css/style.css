@@ -1,0 +1,82 @@
+body{
+	background-image: url(../images/background.jpg);
+}
+
+h1{
+	font-size: 5em;
+}
+
+h3{
+
+}
+
+#theme{
+		font-family: 'Russo One', sans-serif;
+		text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+
+		border: 5px solid yellow;
+		border-radius: 25px;
+
+		color: black;
+		text-align: center;
+		/*margin: auto;*/
+}
+
+.btn-default{
+	background-color: transparent;
+	/*border-color: yellow;*/
+	border:none;
+	font-weight: bold;
+	color: yellow;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/*.btn-default:focus,
+.btn-default:active,
+.btn-default.active
+{
+  background-color: #ffffff;
+}*/
+
+
+
+.btn-default:hover
+{
+  background-color: red;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+
+.btn:focus {
+  background-color: red;
+}
+
+button:hover {
+	background-color: yellow;
+}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#themerow{
+/*	position: relative;
+	top: 50px;*/
+	overflow: auto;
+	margin-top: 50px;
+}
+
+#filler{
+	/*height: 200px;*/
+	height: 14em;
+}
+
+#question{
+	text-align: center;
+	/*margin: auto;*/
+	color: yellow;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	position: relative;
+	bottom: -50%;
+}
