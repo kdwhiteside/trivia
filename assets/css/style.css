@@ -10,6 +10,18 @@ h3{
 
 }
 
+#endgame{
+	font-family: 'Russo One', sans-serif;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+	color: black;
+	text-align: center;
+}
+
+#endgame h1 {
+	font-size: 7em;
+	font-weight: bold;
+}
+
 #theme{
 		font-family: 'Russo One', sans-serif;
 		text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
@@ -38,17 +50,21 @@ h3{
   background-color: #ffffff;
 }*/
 
-
+/*#timer{
+	float:top;
+}*/
 
 .btn-default:hover
 {
-  background-color: red;
-	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+  background-color: yellow;
+	/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+	text-shadow: none;
+	color:black;
 }
 
-.btn:focus {
+/*.btn:focus {
   background-color: red;
-}
+}*/
 
 button:hover {
 	background-color: yellow;
@@ -60,6 +76,10 @@ button:active {
   transform: translateY(4px);
 }
 
+.btn-default:blur {
+	background-color: transparent;;
+}
+
 #themerow{
 /*	position: relative;
 	top: 50px;*/
@@ -67,16 +87,46 @@ button:active {
 	margin-top: 50px;
 }
 
-#filler{
+#filler1{
 	/*height: 200px;*/
-	height: 14em;
+	height: 7em;
 }
 
-#question{
+#filler2{
+	height: 7em;
+}
+
+.question{
 	text-align: center;
 	/*margin: auto;*/
 	color: yellow;
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	position: relative;
-	bottom: -50%;
+	/*bottom: -50%;*/
+}
+
+#startcontainer{
+	position: relative;
+	top:10em;
+}
+
+#startbutton{
+	background-color: yellow;
+	border: 2px solid black;
+	height: 3em;
+	font-family: 'Russo One', sans-serif;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+	font-size: 3em;
+	color: black;
+}
+
+#startbutton:hover {
+	background-color: yellow;
+	border: 5px solid black;
+
+}
+#startbutton:active {
+  background-color: #e6e600;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
