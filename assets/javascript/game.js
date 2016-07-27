@@ -190,6 +190,7 @@ $(document).ready(function(){
 		//FUNCTION CLICK END
 
 		function changes(){
+			console.log("IN CHANGES INDEX: " + index);
 				if (index < 3) {
 					startFillWords();
 
