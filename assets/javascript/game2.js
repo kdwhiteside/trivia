@@ -2,13 +2,40 @@
 $(document).ready(function(){
 	var time;
 	var count;
-	startGame();
+	var objectArray = [
+		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: "darthmaul.gif"}, 
+		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: "jango.gif"}, 
+		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: "qui-gon.gif"},
+		];
 	
-	function startGame(){
-		count = 0
+	function resetValues(){
+		workingArray = [
+		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: "darthmaul.gif"}, 
+		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: "jango.gif"}, 
+		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: "qui-gon.gif"},
+		];
+		count = 0;
 		correct = 0;
 		incorrect = 0;
 		unAnswered = 0;
+		clearInterval(time);
+		startGame();
+
+	}
+
+
+
+
+	resetValues();
+	
+	function startGame(){
+		
+		// WHY IS THIS ASSIGNING BACKWARDS?????
+		// WHY IS THIS ASSIGNING BACKWARDS?????
+		// WHY IS THIS ASSIGNING BACKWARDS?????
+		
+
+
 		$("#startbutton").show();
 		$("#gamecontainer").hide();
 		$("#answers").hide();
@@ -36,21 +63,22 @@ $(document).ready(function(){
 			clearInterval(time);
 			$("#questiontext").html("Out of time!");
 			$("#buttongroup").hide();
-			$("#answertext").html("The Correct Answer was: " + randomObject.answer);
-			$("#answertext").show();
-			// startFillWords();
+			$("#answers").html("<h2>The Correct Answer was: " + randomObject.answer + "</h2><br><img src='assets/images/" + randomObject.gif + "'>");
+			$("#answers").show();
+			
 			unAnswered++;
-			console.log(unAnswered);
-			// count++;
-			// if(count > objectArray.length){
-			// 	console.log("yooooooo");
-			// 	setTimeout(finishGame, 1500);
-			// }
-			// else{
-			// 	console.log("ayyyeee");
-			// 	$("#answers").hide();
-			// 	setTimeout(fillWords, 1500);
-			// };
+			// console.log(unAnswered);
+			count++;
+			
+			if(count >= objectArray.length){
+				// console.log("finish");
+				setTimeout(finishGame, 4000);
+			}
+			else{
+				// console.log("Continue");
+				
+				setTimeout(fillWords, 4000);
+			};
 		};
 	
 		
@@ -76,7 +104,7 @@ $(document).ready(function(){
 		// console.log("correct: " + correct);
 		// console.log("incorrect: " + incorrect);
 		// console.log("unAnswered: " + unAnswered);
-		console.log("YOU SHOULD SEE THIS ONCE PER QUESTION");
+		console.log("YOU SHOULD ONLY SEE THIS ONCE PER QUESTION");
 
 		// SOMEHOW INDEX IS INCREASING BY MORE THAN 1, LIKE EXPONENTIALLY. 
 		// // SOMEHOW INDEX IS INCREASING BY MORE THAN 1, LIKE EXPONENTIALLY. 
@@ -88,7 +116,7 @@ $(document).ready(function(){
 		
 
 		//TIMER STUFF
-		secondsLeft = 8;
+		secondsLeft = 10;
 		clearInterval(time);
 		$("#timer").html(secondsLeft);
 		time = setInterval(countDown, 1000);
@@ -101,11 +129,21 @@ $(document).ready(function(){
 		// FILLS THE QUESTION AND GUESSES HTML
 		// YEAH IT REPEATS RIGHT NOW
 		// NOT THE PROBLEM
-		objectArray = [{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: "darthmaul.gif"}, {question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius"}];
-		var randomNumber = Math.floor((Math.random() * objectArray.length))
-		randomObject = objectArray[0];
+
+		
+		// workingObjectArray = [
+		// {question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: "darthmaul.gif"}, 
+		// {question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: "jango.gif"}, 
+		// {question: "Who trained Obi-Wan Kenobi?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: "qui-gon.gif"},
+		// ];
+		
+		var randomNumber = Math.floor((Math.random() * workingArray.length))
+		
+		randomObject = workingArray[randomNumber];
+		workingArray.splice(randomNumber, 1);
+		
 		$("#questiontext").html(randomObject.question);
-		console.log(randomObject.gif);
+		
 		
 		var guessesArray = [randomObject.answer, randomObject.guess1, randomObject.guess2, randomObject.guess3];
 		for (var i = 1; i < 5; i++) {
@@ -129,34 +167,32 @@ $(document).ready(function(){
 		if(yourGuess == randomObject.answer){
 			$("#questiontext").html("Correct!");
 			correct++
-			console.log("count: " + count);
+			// console.log("count: " + count);
 			count++
 			// return correct;
 			
 		}
 		else{
 			$("#questiontext").html("Nope!");			
-			console.log("count: " + count);
+			// console.log("count: " + count);
 			count++
 			incorrect++;
 			// return incorrect;
 		};
 		
 
-		console.log("count2: " + count);
+		console.log("count++ is: " + count);
 		$("#buttongroup").hide();
 		$("#answers").show();
 		$("#answers").html("<h2>The Correct Answer was: " + randomObject.answer + "</h2><br><img src='assets/images/" + randomObject.gif + "'>");
-		
-		console.log($("#answers").html());
-		
-		if(count > objectArray.length){
-			console.log("ayyyyyeeee");
-			setTimeout(finishGame, 1500);
+				
+		if(count >= objectArray.length){
+			// console.log("Finish");
+			setTimeout(finishGame, 4000);
 		}else {
-			console.log("yoooo");
+			// console.log("Continue");
 			
-			setTimeout(fillWords, 1500);
+			setTimeout(fillWords, 4000);
 		};
 
 	});
@@ -179,15 +215,21 @@ $(document).ready(function(){
 	// 		}
 
 	function finishGame(){
-		var play = confirm("PLAY AGAIN?");
-		if (play) {
-			console.log("yo");
-			startGame();
+		$("#gamecontainer").fadeOut("slow");
+		$("#endgame").fadeIn("slow", function(){
+			play = confirm("PLAY AGAIN?");
+			if (play) {
+			console.log("RESTARTING GAME");
+			resetValues();
 		}
 		else{
-			$("#gamecontainer").hide();
+			$("#gamecontainer").fadeOut("slow");
 			$("#endgame").fadeIn("slow");
 		};
+		});
+
+		
+		
 	};
 
 
