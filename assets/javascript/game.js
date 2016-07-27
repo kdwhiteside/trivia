@@ -1,10 +1,12 @@
-var index = 0;
+var index;
 $(document).ready(function(){
-	startGame();
-	var debug;
+		startGame();
+
 	var time;
 	// WATCH FOR INDEX
 	//INDEX STARTS AT 0
+	index = 0;
+	console.log("index is: " + index);
 
 	
 // THIS IS MY TIMER 
@@ -15,13 +17,12 @@ $(document).ready(function(){
 			clearInterval(time);
 			$("#questiontext").html("Out of time!");
 			$("#answertext").html("The Correct Answer was: " + randomObject.answer);
-			if (index < 3) {
-					console.log("this is the countDown index++");
-					index++;
-					setTimeout(fillWords, 3000);
+			if (index = 2) {
+					finishGame();
 				}
 				else{
-					startFillWords();
+					index = index+1;
+					setTimeout(fillWords, 3000);
 				}
 			
 		};
@@ -37,40 +38,35 @@ $(document).ready(function(){
 	// HIDES EVERYTHING EXCEPT START BUTTON UNTIL PRESSED
 	// CALLS FUNCTION FILLWORDS()
 	function startGame(){
-
-		console.log("BEFORE I set index to 0 in startGame: " + index);
 		index = 0;
+		console.log("I just set index to 0 in startGame");
 		$("#startbutton").show();
 		$("#gamecontainer").hide();
 		$("#endgame").hide();
-		$("#startbutton").click(startButtonFade);
+		$("#startbutton").click(function(){
+			$("#startbutton").fadeOut("slow", function(){
+				$("#gamecontainer").fadeIn("slow", fillWords());
+			});		
+		});
 	};
 
-
-	//I MADE THIS TO ISOLATE IT, DEBUGGING
-	function startButtonFade(){
-			$("#startbutton").fadeOut("slow", function(){
-				$("#gamecontainer").fadeIn("slow", fillWords);
-			});		
-		};
+	
 	
 
 
 	
 
 	// THIS FUNCTION FILLS THE QUESTION, BUTTONS, AND TIMER//
-	
-
 	//IT FIRES MANY TIMES 
-	// AFTER ROUND 1 IT FIRES OVER AND OVER
 	// WHY
 	function fillWords(){
-		clearTimeout(debug);
 
-		console.log("YOU SHOULD SEE THIS ONCE PER ROUND index is: " + index);
+
+
+
 		// SOMEHOW INDEX IS INCREASING BY MORE THAN 1, LIKE EXPONENTIALLY. 
 		// SOMEHOW INDEX IS INCREASING BY MORE THAN 1, LIKE EXPONENTIALLY. 
-
+		console.log("At the beginning of fillwords index is: " + index);
 		
 		// THIS ALL FIRES MORE THAN ONCE// THIS ALL FIRES MORE THAN ONCE// THIS ALL FIRES MORE THAN ONCE
 		// THIS ALL FIRES MORE THAN ONCE
@@ -82,7 +78,6 @@ $(document).ready(function(){
 
 		//TIMER STUFF
 		clearInterval(time);
-		clearTimeout(debug);
 		secondsLeft = 20;
 		$("#timer").html(secondsLeft);
 		time = setInterval(countDown, 1000);
@@ -107,14 +102,6 @@ $(document).ready(function(){
 			guess2: "Qui-Gon Jinn",
 			guess3: "Darth Sidius"
 		}
-
-		var thirdObject = {
-			question: "Who trained Obi-Wan?", 
-			answer: "Qui-Gon Jinn", 
-			guess1: "Yoda", 
-			guess2: "Mace Windu",
-			guess3: "Darth Sidius"
-		}
 		
 		
 		// GETS A RANDOM OBJECT
@@ -123,7 +110,7 @@ $(document).ready(function(){
 		// YEAH IT REPEATS RIGHT NOW
 		// NOT THE PROBLEM
 		$("#answertext").hide();
-		var objectArray = [firstObject, secondObject, thirdObject];
+		var objectArray = [firstObject, secondObject];
 		randomObject = objectArray[Math.floor((Math.random() * objectArray.length))];
 		$("#questiontext").html(randomObject.question);
 		var guessesArray = [randomObject.answer, randomObject.guess1, randomObject.guess2, randomObject.guess3];
@@ -135,7 +122,7 @@ $(document).ready(function(){
 		}
 		$("#buttongroup").show()
 		// BUTTON ONCLICKS
-		$(".guess").mouseup(click);
+		$(".guess").click(click);
 	
 
 
@@ -146,72 +133,76 @@ $(document).ready(function(){
 
 	// I MADE THIS FOR DEBUGGING
 	function startFillWords(){
-		
-		console.log("BEFORE startFillWords index++" + index);
 		index ++;
-		var debug = setTimeout(fillWords, 3000);
+		setTimeout(fillWords, 3000);
 	}
 	// TRYING TO ISOLATE THINGS
 
 	
-	// CLICK
+	
 	// GUESS CHECKER
 	// THE PROBLEM COULD BE HERE
 	function click(){
-		
-		console.log("ONCLICK index is: " + index);
+		debug = index;
+		console.log("first on button click index is: " + index);
 			var yourGuess = $(this).html();
 			
 			if(yourGuess == randomObject.answer){
-				console.log("RIGHT ANSWER");
 				clearInterval(time);
 				$("#questiontext").html("Correct!");
 				$("#buttongroup").fadeOut();
 				$("#answertext").html("The Correct Answer was: " + randomObject.answer);
-				$("#answertext").fadeIn();
-				changes();
+				$("#answertext").fadeIn();	
+				console.log("on button click index is: " + index);
+				if (index > 2) {
+					console.log("still in click function, index > 2 if you see this");
+					finishGame();
 
+				}
+				else{
+					console.log("still in click function, index <= 2 if you see this");
+					
+					startFillWords();
+				}
 				
 			}
 			else{
-				console.log("WRONG ANSWER");
 				clearInterval(time);
 				$("#questiontext").html("Nope!");
 				$("#buttongroup").fadeOut();
 				$("#answertext").html("The Correct Answer was: " + randomObject.answer);
 				$("#answertext").fadeIn();
-				changes()
-				
-				
+				console.log("on button click index is: " + index);
+				if (index > 2) {
+					console.log("still in click function, index > 2 if you see this");
+					finishGame();
+
+				}
+				else{
+					console.log("still in click function, index <= 2 if you see this");
+					
+					startFillWords();
+				}
 			};
 		};
 		//FUNCTION CLICK END
 		//FUNCTION CLICK END
 		//FUNCTION CLICK END
 
-		function changes(){
-			console.log("IN CHANGES INDEX: " + index);
-				if (index < 3) {
-					startFillWords();
-
-				}
-				else{
-					
-					finishGame();
-				};
-		};
 
 	
 
-	// THIS FIRES TWICE
+	// THIS IS RIDICULOUS WTF
+	// THIS IS RIDICULOUS WTF
 	function finishGame(){
-		console.log("FINISHGAME index is: " + index);
+		console.log("First in function finishGame index is: " + index);
 		$("#gamecontainer").fadeOut();
 		
 		$("#endgame").fadeIn()
 		
 		var playAgain = confirm("PLAY AGAIN?");
 		if (playAgain === true) {
+			console.log("in function finishGame index is: " + index);
 			// index = 0
 			// console.log("I just set index as 0");
 			startGame();
@@ -220,7 +211,9 @@ $(document).ready(function(){
 
 		};
 	};
-	// THIS FIRES TWICE
+
+	// THIS IS RIDICULOUS WTF
+	// THIS IS RIDICULOUS WTF
 
 
 
