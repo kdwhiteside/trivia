@@ -15,6 +15,8 @@ h3{
 	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
 	color: black;
 	text-align: center;
+	position: relative;
+	top:10em;
 }
 
 #endgame h1 {
@@ -129,4 +131,17 @@ button:active {
   background-color: #e6e600;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+#answers {
+	font-family: 'Russo One', sans-serif;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+	color: black;
+	text-align: center;
+}
+
+#answers img {
+	margin: auto;
+	height: 200px;
+	width: auto;
 }
