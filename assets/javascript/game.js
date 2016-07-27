@@ -163,44 +163,42 @@ $(document).ready(function(){
 			var yourGuess = $(this).html();
 			
 			if(yourGuess == randomObject.answer){
+				console.log("RIGHT ANSWER");
 				clearInterval(time);
 				$("#questiontext").html("Correct!");
 				$("#buttongroup").fadeOut();
 				$("#answertext").html("The Correct Answer was: " + randomObject.answer);
 				$("#answertext").fadeIn();
-				
-				if (index < 3) {
-					startFillWords();
+				changes();
 
-				}
-				else{
-					
-					finishGame();
-				}
 				
 			}
 			else{
+				console.log("WRONG ANSWER");
 				clearInterval(time);
 				$("#questiontext").html("Nope!");
 				$("#buttongroup").fadeOut();
 				$("#answertext").html("The Correct Answer was: " + randomObject.answer);
 				$("#answertext").fadeIn();
+				changes()
 				
 				
-				if (index < 3) {
-					startFillWords();
-
-				}
-				else{
-					
-					finishGame();
-				}
 			};
 		};
 		//FUNCTION CLICK END
 		//FUNCTION CLICK END
 		//FUNCTION CLICK END
 
+		function changes(){
+				if (index < 3) {
+					startFillWords();
+
+				}
+				else{
+					
+					finishGame();
+				};
+		};
 
 	
 
