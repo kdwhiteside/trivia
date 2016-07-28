@@ -170,5 +170,7 @@ button:active {
 	width: auto;
 }
 @media (max-width: 480px) {
-	
+	.disappear{
+		display: none;
+	}
 }

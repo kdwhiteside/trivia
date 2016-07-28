@@ -32,7 +32,7 @@ $(document).ready(function(){
 		$("#endgame").hide();
 		
 		$("#startbutton").click(function(){
-				$(".themecol").addClass("col-xs-6 hidden-xs-down");
+				$(".themecol").addClass("disappear");
 				$("#startbutton").fadeOut("slow", fillWords);		
 			}
 
@@ -162,7 +162,7 @@ $(document).ready(function(){
 		incorrect = 0;
 		unAnswered = 0;
 		clearInterval(time);
-		$(".themecol").removeClass("col-xs-6 hidden-xs-down");
+		$(".themecol").removeClass("disappear");
 		$("#startbutton").show();
 		$("#gamecontainer").hide();
 		$("#answers").hide();
