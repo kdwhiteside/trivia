@@ -17,6 +17,8 @@ $(document).ready(function(){
 		{question: "What does ATAT stand for?", answer: "All Terrain Armoured Transport", guess1: "Automotive Transport Attack Tank", guess2: "Attack Terrain Armoured Transport", guess3: "Attack Transport Assault Tank", gif: ["atatlose.gif", "atatwin.gif"]}, 
 		{question: "Who is the voice actor that played Darth Vader's voice?", answer: "James Earl Jones", guess1: "Samuel L. Jackson", guess2: "Mark Hamil", guess3: "Billy Dee Williams", gif: ["james.gif", "james.gif"]},
 		{question: "What is Han Solo's call sign when he is patrolling hoth on his Tauntaun?", answer: "Echo 7", guess1: "Echo 5", guess2: "Rogue 5", guess3: "Rogue 7", gif: ["echolose.gif", "echowin.gif"]},
+		{question: "Who did Luke Skywalker meet for the first time in the Dagobah system?",answer: "Yoda", guess1: "Darth Vader", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["yodalose.gif", "yodawin.gif"]}, 
+
 		];
 
 		
@@ -33,6 +35,8 @@ $(document).ready(function(){
 		{question: "What does ATAT stand for?", answer: "All Terrain Armoured Transport", guess1: "Automotive Transport Attack Tank", guess2: "Attack Terrain Armoured Transport", guess3: "Attack Transport Assault Tank", gif: ["atatlose.gif", "atatwin.gif"]}, 
 		{question: "Who is the voice actor that played Darth Vader's voice?", answer: "James Earl Jones", guess1: "Samuel L. Jackson", guess2: "Mark Hamil", guess3: "Billy Dee Williams", gif: ["james.gif", "james.gif"]},
 		{question: "What is Han Solo's call sign when he is patrolling hoth on his Tauntaun?", answer: "Echo 7", guess1: "Echo 5", guess2: "Rogue 5", guess3: "Rogue 7", gif: ["echolose.gif", "echowin.gif"]},
+		{question: "Who did Luke Skywalker meet for the first time in the Dagobah system?",answer: "Yoda", guess1: "Darth Vader", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["yodalose.gif", "yodawin.gif"]}, 
+	
 		];
 		count = 0;
 		correct = 0;
@@ -191,6 +195,7 @@ $(document).ready(function(){
 		{question: "What does ATAT stand for?", answer: "All Terrain Armoured Transport", guess1: "Automotive Transport Attack Tank", guess2: "Attack Terrain Armoured Transport", guess3: "Attack Transport Assault Tank", gif: ["atatlose.gif", "atatwin.gif"]}, 
 		{question: "Who is the voice actor that played Darth Vader's voice?", answer: "James Earl Jones", guess1: "Samuel L. Jackson", guess2: "Mark Hamil", guess3: "Billy Dee Williams", gif: ["james.gif", "james.gif"]},
 		{question: "What is Han Solo's call sign when he is patrolling hoth on his Tauntaun?", answer: "Echo 7", guess1: "Echo 5", guess2: "Rogue 5", guess3: "Rogue 7", gif: ["echolose.gif", "echowin.gif"]},
+		{question: "Who did Luke Skywalker meet for the first time in the Dagobah system?",answer: "Yoda", guess1: "Darth Vader", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["yodalose.gif", "yodawin.gif"]}, 
 		];
 		count = 0;
 		correct = 0;
