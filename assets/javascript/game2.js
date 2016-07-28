@@ -1,17 +1,24 @@
 $(document).ready(function(){
 	var time;
 	var count;
-	var objectArray = [{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: "darthmaul.gif"}, {question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: "jango.gif"}, {question: "Trained Obi-Wan Kenobi?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: "qui-gon.gif"}, {question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi"}];
+	var objectArray = [
+		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: ["darthmaul.gif", "darthmaul.gif"]}, 
+		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: ["jango.gif", "jango.gif"]}, 
+		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: ["qui-gon.gif", "qui-gon.gif"]}, 
+		{question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["lukelose.gif", "lukewin.gif"]}, 
+		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]}
+		];
 
 		
 	startGame();
 
 	function startGame(){
 		workingArray = [
-		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: "darthmaul.gif"}, 
-		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: "jango.gif"}, 
-		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: "qui-gon.gif"}, 
-		{question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi"}
+		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: ["darthmaul.gif", "darthmaul.gif"]}, 
+		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: ["jango.gif", "jango.gif"]}, 
+		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: ["qui-gon.gif", "qui-gon.gif"]}, 
+		{question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["lukelose.gif", "lukewin.gif"]}, 
+		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]}
 		];
 		count = 0;
 		correct = 0;
@@ -76,7 +83,7 @@ $(document).ready(function(){
 			clearInterval(time);
 			$("#questiontext").html("Out of time!");
 			$("#buttongroup").hide();
-			$("#answers").html("<h2>The Correct Answer was: " + randomObject.answer + "</h2><br><img src='assets/images/" + randomObject.gif + "'>");
+			$("#answers").html("<h2>The Correct Answer was: " + randomObject.answer + "</h2><br><img src='assets/images/" + randomObject.gif[0] + "'>");
 			$("#answers").show();
 			
 			unAnswered++;
@@ -85,12 +92,12 @@ $(document).ready(function(){
 			
 			if(count >= objectArray.length){
 				// console.log("finish");
-				setTimeout(finishGame, 4000);
+				setTimeout(finishGame, 5000);
 			}
 			else{
 				// console.log("Continue");
 				
-				setTimeout(fillWords, 4000);
+				setTimeout(fillWords, 5000);
 			};
 		};
 	};//TIMER END
@@ -104,27 +111,28 @@ $(document).ready(function(){
 			$("#questiontext").html("Correct!");
 			correct++
 		
-			count++		
+			count++	
+			$("#answers").html("<img src='assets/images/" + randomObject.gif[1] + "'>");
 		}
 		else{
 			$("#questiontext").html("Nope!");			
 		
 			count++
 			incorrect++;
-		
+			$("#answers").html("<h2>The Correct Answer was: " + randomObject.answer + "</h2><br><img src='assets/images/" + randomObject.gif[0] + "'>");
 		};
 		
 		$("#buttongroup").hide();
 		$("#answers").show();
-		$("#answers").html("<h2>The Correct Answer was: " + randomObject.answer + "</h2><br><img src='assets/images/" + randomObject.gif + "'>");
+		
 				
 		if(count >= objectArray.length){
 		
-			setTimeout(finishGame, 4000);
+			setTimeout(finishGame, 5000);
 		}else {
 			// console.log("Continue");
 			
-			setTimeout(fillWords, 4000);
+			setTimeout(fillWords, 5000);
 		};
 
 	});
@@ -142,10 +150,11 @@ $(document).ready(function(){
 
 	function resetGame(){
 		workingArray = [
-		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: "darthmaul.gif"}, 
-		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: "jango.gif"}, 
-		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: "qui-gon.gif"}, 
-		{question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi"}
+		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: ["darthmaul.gif", "darthmaul.gif"]}, 
+		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: ["jango.gif", "jango.gif"]}, 
+		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: ["qui-gon.gif", "qui-gon.gif"]}, 
+		{question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["lukelose.gif", "lukewin.gif"]}, 
+		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]}
 		];
 		count = 0;
 		correct = 0;
