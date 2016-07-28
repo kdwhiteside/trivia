@@ -13,7 +13,7 @@ $(document).ready(function(){
 		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: ["qui-gonlose.gif", "qui-gonwin.gif"]}, 
 		{question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["lukelose.gif", "lukewin.gif"]}, 
 		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]},
-		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]}
+		// {question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]}
 		];
 
 		
