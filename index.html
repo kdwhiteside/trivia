@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<title>Trivia</title>
 </head>
+
 <body>
 	<div class="container">
 		<div class="row"  id="themerow">
@@ -78,8 +79,16 @@
 		</div>
 	
 	</div><!-- CONTAINER END -->
-	<div id="endgame">
-		<h1>GAME OVER</h1>
+	<div id="endgame" class="container">
+		<div class="row">	
+			<h1>GAME OVER</h1>
+			<h3 id="score"></h3>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<button type="button" class="btn btn-lg btn-block btn-warning-outline" id="replaybutton">PLAY AGAIN</button>
+			</div>
+		</div>
 	</div>
 
 

@@ -16,7 +16,7 @@ h3{
 	color: black;
 	text-align: center;
 	position: relative;
-	top:10em;
+	top:6em;
 }
 
 #endgame h1 {
@@ -128,6 +128,27 @@ button:active {
 
 }
 #startbutton:active {
+  background-color: #e6e600;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#replaybutton{
+	background-color: yellow;
+	border: 2px solid black;
+	height: 3em;
+	font-family: 'Russo One', sans-serif;
+	text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+	font-size: 3em;
+	color: black;
+}
+
+#replaybutton:hover {
+	background-color: yellow;
+	border: 5px solid black;
+
+}
+#replaybutton:active {
   background-color: #e6e600;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
