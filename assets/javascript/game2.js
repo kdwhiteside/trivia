@@ -10,10 +10,13 @@ $(document).ready(function(){
 	var objectArray = [
 		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: ["darthmaullose.gif", "darthmaul.gif"]}, 
 		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: ["jango.gif", "jango.gif"]}, 
-		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: ["qui-gonlose.gif", "qui-gonwin.gif"]}, 
+		{question: "Who trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: ["qui-gonlose.gif", "qui-gonwin.gif"]}, 
 		{question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["lukelose.gif", "lukewin.gif"]}, 
 		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]},
-		// {question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]}
+		{question: "What is the name of Han Solo's ship?", answer: "Millenium Falcon", guess1: "Star Destroyer", guess2: "X-Wing", guess3: "Tie Fighter", gif: ["falconlose.gif", "falconwin.gif"]}, 
+		{question: "What does ATAT stand for?", answer: "All Terrain Armoured Transport", guess1: "Automotive Transport Attack Tank", guess2: "Attack Terrain Armoured Transport", guess3: "Attack Transport Assault Tank", gif: ["atatlose.gif", "atatwin.gif"]}, 
+		{question: "Who is the voice actor that played Darth Vader's voice?", answer: "James Earl Jones", guess1: "Samuel L. Jackson", guess2: "Mark Hamil", guess3: "Billy Dee Williams", gif: ["james.gif", "james.gif"]},
+		{question: "What is Han Solo's call sign when he is patrolling hoth on his Tauntaun?", answer: "Echo 7", guess1: "Echo 5", guess2: "Rogue 5", guess3: "Rogue 7", gif: ["echolose.gif", "echowin.gif"]},
 		];
 
 		
@@ -25,7 +28,11 @@ $(document).ready(function(){
 		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: ["jango.gif", "jango.gif"]}, 
 		{question: "Who trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: ["qui-gonlose.gif", "qui-gonwin.gif"]}, 
 		{question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["lukelose.gif", "lukewin.gif"]}, 
-		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]}
+		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]},
+		{question: "What is the name of Han Solo's ship?", answer: "Millenium Falcon", guess1: "Star Destroyer", guess2: "X-Wing", guess3: "Tie Fighter", gif: ["falconlose.gif", "falconwin.gif"]}, 
+		{question: "What does ATAT stand for?", answer: "All Terrain Armoured Transport", guess1: "Automotive Transport Attack Tank", guess2: "Attack Terrain Armoured Transport", guess3: "Attack Transport Assault Tank", gif: ["atatlose.gif", "atatwin.gif"]}, 
+		{question: "Who is the voice actor that played Darth Vader's voice?", answer: "James Earl Jones", guess1: "Samuel L. Jackson", guess2: "Mark Hamil", guess3: "Billy Dee Williams", gif: ["james.gif", "james.gif"]},
+		{question: "What is Han Solo's call sign when he is patrolling hoth on his Tauntaun?", answer: "Echo 7", guess1: "Echo 5", guess2: "Rogue 5", guess3: "Rogue 7", gif: ["echolose.gif", "echowin.gif"]},
 		];
 		count = 0;
 		correct = 0;
@@ -177,9 +184,13 @@ $(document).ready(function(){
 		workingArray = [
 		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: ["darthmaullose.gif", "darthmaul.gif"]}, 
 		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: ["jango.gif", "jango.gif"]}, 
-		{question: "Trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: ["qui-gonlose.gif", "qui-gonwin.gif"]}, 
+		{question: "Who trained Obi-Wan?",answer: "Qui-Gon Jinn", guess1: "Anakin Skywalker", guess2: "Mace Windu", guess3: "Darth Sidius", gif: ["qui-gonlose.gif", "qui-gonwin.gif"]}, 
 		{question: "Who is Princess Leia's brother?", answer: "Luke Skywalker", guess1: "Anakin Skywalker", guess2: "Han Solo", guess3: "Obi-Wan Kenobi", gif: ["lukelose.gif", "lukewin.gif"]}, 
-		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]}
+		{question: "What planet is Chewbacca from?", answer: "Kashyyyk", guess1: "Alderaan", guess2: "Tatooine", guess3: "Yavin", gif: ["chewylose.gif", "chewywin.gif"]},
+		{question: "What is the name of Han Solo's ship?", answer: "Millenium Falcon", guess1: "Star Destroyer", guess2: "X-Wing", guess3: "Tie Fighter", gif: ["falconlose.gif", "falconwin.gif"]}, 
+		{question: "What does ATAT stand for?", answer: "All Terrain Armoured Transport", guess1: "Automotive Transport Attack Tank", guess2: "Attack Terrain Armoured Transport", guess3: "Attack Transport Assault Tank", gif: ["atatlose.gif", "atatwin.gif"]}, 
+		{question: "Who is the voice actor that played Darth Vader's voice?", answer: "James Earl Jones", guess1: "Samuel L. Jackson", guess2: "Mark Hamil", guess3: "Billy Dee Williams", gif: ["james.gif", "james.gif"]},
+		{question: "What is Han Solo's call sign when he is patrolling hoth on his Tauntaun?", answer: "Echo 7", guess1: "Echo 5", guess2: "Rogue 5", guess3: "Rogue 7", gif: ["echolose.gif", "echowin.gif"]},
 		];
 		count = 0;
 		correct = 0;
