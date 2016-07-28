@@ -3,6 +3,8 @@ $(document).ready(function(){
 	var count;
 	// var music = 
 	var audio = new Audio("assets/jedi2.mp3");
+	
+
 
 
 	var objectArray = [
@@ -30,6 +32,8 @@ $(document).ready(function(){
 		incorrect = 0;
 		unAnswered = 0;
 
+		$("#mutebutton").hide();
+		$("#mute").hide();
 		$("#startbutton").show();
 		$("#gamecontainer").hide();
 		$("#answers").hide();
@@ -38,6 +42,8 @@ $(document).ready(function(){
 		
 		$("#startbutton").click(function(){
 				audio.play();
+				$("#mutebutton").show();
+				// $("#play").show();
 				$(".themecol").addClass("disappear");
 				$("#startbutton").fadeOut("slow", fillWords);		
 			}
@@ -46,7 +52,19 @@ $(document).ready(function(){
 	};
 
 
-	
+	$("#mutebutton").click(function(){
+        var bool = audio.paused;
+        console.log(audio.paused);
+        if(bool === true){
+        	console.log("HEY");
+        	audio.play();
+        }else{
+        	console.log("YO");
+        	audio.pause();
+        }
+        $("#play").toggle();
+        $("#mute").toggle();
+	});
 
 
 	function fillWords(){

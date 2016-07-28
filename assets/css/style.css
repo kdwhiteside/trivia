@@ -4,7 +4,9 @@ body{
 	/*background-size: height:100%;*/
 }
 
-
+.clearfix {
+	overflow:auto;
+}
 
 h1{
 	font-size: 5em;
