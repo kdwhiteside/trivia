@@ -24,6 +24,15 @@ h3{
 	font-weight: bold;
 }
 
+#themerow{
+/*	position: relative;
+	top: 50px;*/
+	overflow: auto;
+	/*margin-top: 50px;*/
+	position: relative;
+	top: 2em;
+}
+
 #theme{
 		font-family: 'Russo One', sans-serif;
 		text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
@@ -33,7 +42,6 @@ h3{
 
 		color: black;
 		text-align: center;
-		/*margin: auto;*/
 }
 
 .btn-default{
@@ -82,12 +90,7 @@ button:active {
 	background-color: transparent;;
 }
 
-#themerow{
-/*	position: relative;
-	top: 50px;*/
-	overflow: auto;
-	margin-top: 50px;
-}
+
 
 #filler1{
 	/*height: 200px;*/
@@ -165,4 +168,7 @@ button:active {
 	margin: auto;
 	height: 200px;
 	width: auto;
+}
+@media (max-width: 480px) {
+	
 }
