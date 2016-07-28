@@ -1,6 +1,10 @@
 $(document).ready(function(){
 	var time;
 	var count;
+	// var music = 
+	var audio = new Audio("assets/jedi.mp3");
+
+
 	var objectArray = [
 		{question: "Who defeated Darth Maul?",answer: "Obi-Wan Kenobi", guess1: "Anakin Skywalker", guess2: "Luke Skywalker", guess3: "Darth Maul", gif: ["darthmaullose.gif", "darthmaul.gif"]}, 
 		{question: "Who killed Jango Fett?", answer: "Mace Windu", guess1: "Yoda", guess2: "Qui-Gon Jinn", guess3: "Darth Sidius", gif: ["jango.gif", "jango.gif"]}, 
@@ -32,6 +36,7 @@ $(document).ready(function(){
 		$("#endgame").hide();
 		
 		$("#startbutton").click(function(){
+				audio.play();
 				$(".themecol").addClass("disappear");
 				$("#startbutton").fadeOut("slow", fillWords);		
 			}
