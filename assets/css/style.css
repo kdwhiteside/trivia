@@ -1,8 +1,13 @@
 body{
-	background-image: url(../images/background3.jpg);
-	/*background-size: cover;*/
+	background-image: url(../images/background4.jpg);
+	background-size: 100%;
 	/*background-size: height:100%;*/
+	/*position: absolute;*/
+	background-repeat: no-repeat;
+
 }
+
+body background-image {}
 
 .clearfix {
 	overflow:auto;
